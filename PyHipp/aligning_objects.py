@@ -25,7 +25,7 @@ import pandas as pd
 import hickle as hkl
 import DataProcessingTools as DPT
 from .rplparallel import RPLParallel
-# from .eyelink import Eyelink
+from .eyelink import Eyelink
 from .unity import Unity
 
 

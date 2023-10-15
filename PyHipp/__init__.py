@@ -10,8 +10,8 @@ from .helperfunctions import computeFFT, removeLineNoise
 from .aligning_objects import aligning_objects
 from .umaze import Umaze
 from .spiketrain import Spiketrain
-# from .eyelink import EDFSplit 
-# from .eyelink import Eyelink
+from .eyelink import EDFSplit 
+from .eyelink import Eyelink
 from .vmlfp import VMLFP
 from .vmhighpass import VMHighPass
 from .vmraw import VMRaw
