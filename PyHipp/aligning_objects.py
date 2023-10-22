@@ -254,8 +254,3 @@ def aligning_objects():
     el.save()
     
     print('finish aligning objects')
-            
-
-
-        
-        

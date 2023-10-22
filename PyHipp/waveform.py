@@ -59,7 +59,7 @@ class Waveform(DPT.DPObject):
             DPT.DPObject.create(self, *args, **kwargs)
         else:
             # create empty object if data is empty
-            DPT.DPObject.create(self, dirs=[], *args, **kwargs)            
+            DPT.DPObject.create(self, dirs=[], *args, **kwargs)
 
     def append(self, wf):
         # this function will be called by processDirs to append the values of certain fields
