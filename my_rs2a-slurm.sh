@@ -3,8 +3,9 @@
 # Submit this script with: sbatch <this-filename>
 
 #SBATCH --time=24:00:00   # walltime
-#SBATCH --ntasks=5   # number of processor cores (i.e. tasks)
+#SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
+#SBATCH --cpus-per-task=10   # number of CPUs for this task
 #SBATCH -J "rs2a"   # job name
 
 ## /SBATCH -p general # partition (queue)
@@ -23,3 +24,5 @@ print(time.localtime()); \
 print(time.time()-t0);"
 
 # aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:547215547739:awsnotify --message "RS2AJobDone"
+
+
