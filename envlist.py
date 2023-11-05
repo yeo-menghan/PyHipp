@@ -34,26 +34,14 @@ else:
 lock = FileLock(lock_path, timeout=time_out_secs)
 
 with lock:
-    # Check the value of pmode to determine the operation
     if pmode == RESET_MODE:
-        # Convert nenvs to an integer
-        nenvs = int(nenvs)
-        # Create a list (named clist) of nenvs environments with the
-        # prefix envprefix
-        clist = [f"{envprefix}{i}" for i in range(nenvs)]
-        print(clist)
         clist1 = [*range(0,int(nenvs),1)]
         clist = [envprefix + str(s) for s in clist1]
     else:
-        # Load the list of environments from a file
+        # load hickle file
         clist = hickle.load(file_path)
 
         if pmode == WRITE_MODE:
-            # Append an item (env) to the end of the list
-            clist.append(env)
-        else:
-            # Return the next environment from the list
-            env = clist.pop(0)
             # append item to end of list
             clist.append(env)
         else:    
@@ -62,5 +50,5 @@ with lock:
             # return env name
             print(env)
 
-    # Save the updated list of environments back to the file
+    # save hickle file
     hickle.dump(clist, file_path, mode="w")
